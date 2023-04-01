@@ -1,2 +1,2 @@
 # Js
-Host For Javascript
+Host For Javascript, can use for blogger
