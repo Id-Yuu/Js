@@ -3,6 +3,7 @@
   "short_name": "Arlethdesign",
   "start_url": "https://arlethdesign.blogspot.com/",
   "display": "standalone",
+  "prefer_related_applications": false,
   "background_color": "#222",
   "description": "Tutorial Blogger Anime Fansub & Fanshare",
   "icons": [
