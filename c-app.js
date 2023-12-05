@@ -8,12 +8,7 @@ import {
 
   // Your web app's Firebase configuration
   const firebaseConfig = {
-    apiKey: "AIzaSyBNBqJA2hIwjtDdUCc1JoXbMCxib_XkoFI",
-    authDomain: "hsr-gi.firebaseapp.com",
-    projectId: "hsr-gi",
-    storageBucket: "hsr-gi.appspot.com",
-    messagingSenderId: "392973251153",
-    appId: "1:392973251153:web:f1eb4289a7fad778a8be70",
+    databaseURL: "https://hsr-gi-default-rtdb.firebaseio.com",
   };
 
   const app = initializeApp(firebaseConfig);
