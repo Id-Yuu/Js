@@ -92,15 +92,16 @@ import { ref, push, onChildAdded, getDatabase } from "https://www.gstatic.com/fi
             const messageDiv = document.createElement("div");
             messageDiv.innerHTML = `<b>${name}:</b> ${message}`;
             if (imageUrl) {
+                const div = document.createElement("div");
                 const link = document.createElement("a");
                 link.href = imageUrl;
-                link.classList.add("separator");
-
+                link.target = "_blank";
                 const image = document.createElement("img");
                 image.src = imageUrl;
-
                 link.appendChild(image);
-                messageDiv.appendChild(link);
+                div.appendChild(link);
+                div.classList.add("separator");
+                messageDiv.appendChild(div);
             }
 
             messageContainer.appendChild(messageDiv);
