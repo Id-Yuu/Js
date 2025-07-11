@@ -193,27 +193,16 @@
         `;
       document.body.appendChild(subcard);
 
-      // disable subcard on responsive devices
-      if (window.innerWidth < 600) {
+      // disable subcard on responsive devices realtime read window width responsive
+      const mediaQuery = window.matchMedia("(max-width: 600px)");
+      if (mediaQuery.matches || window.innerWidth < 600) {
         subcard.style.display = "none";
-        card.addEventListener("click", (e) => {
-          e.preventDefault();
-          subcard.style.left = `${e.clientX}px`;
-          subcard.style.top = `${e.clientY}px`;
-          subcard.classList.add("visible");
-        });
         subcard.remove();
-        return;
       }
 
       // disable subcard on touch devices
       if ("ontouchstart" in document.documentElement) {
-        card.addEventListener("touchstart", (e) => {
-          e.preventDefault();
-          subcard.style.left = `${e.touches[0].clientX}px`;
-          subcard.style.top = `${e.touches[0].clientY}px`;
-          subcard.classList.add("visible");
-        });
+        subcard.remove();
       }
 
       // Style the subcard globally
@@ -343,14 +332,6 @@
       card.addEventListener("mouseleave", () => {
         subcard.classList.remove("visible");
       });
-
-      // disable on touch devices
-      card.addEventListener("touchstart", (e) => {
-        e.preventDefault();
-        subcard.style.left = `${e.touches[0].clientX}px`;
-        subcard.style.top = `${e.touches[0].clientY}px`;
-        subcard.classList.add("visible");
-      });
     }, 2000);
     }
     renderSkeleton() {
@@ -385,9 +366,11 @@
             }
           }
         </style>
-        <div class="skeleton"></div> `; 
-        }} 
-        customElements.define("slide-card", BloggerCard);
+        <div class="skeleton"></div>
+	`;
+ 	}
+   }
+   customElements.define("slide-card", BloggerCard);
    ```
 
 4. Create Script Show Data Blogger
